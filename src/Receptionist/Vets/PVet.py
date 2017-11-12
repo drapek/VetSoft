@@ -1,6 +1,9 @@
 # VVetList
-def show_vet_clicked():
-    pass  # TODO implement it
+def show_vet_list_window():
+    # TODO download all vets from model
+    # TODO init the GUI window
+    # TODO insert vets to the window
+    pass
 
 
 def close_vet_list_clicked():
