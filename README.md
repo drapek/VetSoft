@@ -5,5 +5,5 @@
 ## Requirements
 
 * Python 3.6
-* PythonQT4
+* PyQt5
 
