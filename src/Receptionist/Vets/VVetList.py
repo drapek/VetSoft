@@ -9,8 +9,6 @@ class VVetList(QDialog):
         super().__init__(parent=parent)
 
     def draw_vet_list_window(self, event_listener, vetDTO_list):
-        self.event_listener = event_listener
-
         self.setGeometry(300, 200, WINDOW_WIDTH, WINDOW_HEIGHT)
         self.setWindowTitle(f"{APP_NAME} - Lista weterynarzy")
         self.layout = QGridLayout()
@@ -31,22 +29,13 @@ class VVetList(QDialog):
                 vets_table.setItem(i, 2, QTableWidgetItem(str(vet.last_name)))
                 vets_table.setItem(i, 3, QTableWidgetItem(str(vet.tel_number)))
                 edit_vet_button = QPushButton('Edytuj', self)
-                # TODO add listener to the buttons
+                edit_vet_button.clicked.connect(lambda x: event_listener.edit_vet_clicked(vet.id))
                 vets_table.setCellWidget(i, 4, edit_vet_button)
         self.layout.addWidget(vets_table)
 
         btn_close = QPushButton('< Wróć', self)
-        btn_close.clicked.connect(self.go_back_clicked)
-
-        btn_close.move(400, 500)
+        btn_close.clicked.connect(lambda: event_listener.close_vet_list_clicked())
         self.layout.addWidget(btn_close)
 
         self.setLayout(self.layout)
         self.show()
-
-    def go_back_clicked(self,):
-        """
-        This method is needed, because there it won't work for direct connect at button binding
-
-        """
-        self.event_listener.close_vet_list_clicked()
