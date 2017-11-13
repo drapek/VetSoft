@@ -1,4 +1,3 @@
-from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QPushButton, QWidget, QLabel, QSizePolicy
 
 from config.settings import APP_NAME

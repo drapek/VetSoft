@@ -1,5 +1,5 @@
 from PyQt5.QtCore import QCoreApplication
-from Receptionist.Vets import PVet
+from Receptionist.Vets import main as receptionist_vet
 
 
 class PMainMenu:
@@ -12,7 +12,7 @@ class PMainMenu:
         self.vMainMenu.draw_main_menu(event_listener=self)
 
     def show_vets_clicked(self):
-        PVet.show_vet_list_window()
+        receptionist_vet.open_vet_list_window(parent_window=self.vMainMenu)
 
     def close_app_clicked(self):
         QCoreApplication.instance().quit()

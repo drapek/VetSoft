@@ -1,13 +1,12 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget
 
-from Receptionist.VMainMenu import VMainMenu
+from PyQt5.QtWidgets import QApplication
+
 from Receptionist.PMainMenu import PMainMenu
+from Receptionist.VMainMenu import VMainMenu
 
 
 def main():
-    # TODO this is only scratch code - reformat it to proper modules
-    # app, window = init_qt_env()
     app = QApplication(sys.argv)
     v_main_menu = VMainMenu()
     p_main_menu = PMainMenu(v_main_menu)
